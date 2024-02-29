@@ -1,0 +1,19 @@
+:root{
+    --darkblue-color: #03517F;
+    --YellowOrch-color: #F9BD21;
+    --Grey-color: #B4B5B6;
+    --SomeBlue: #065481;
+}
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+}
+body{
+    margin:0;
+    font-family: "Inter",Arial, Helvetica, sans-serif;
+}
+.wrapper{
+    max-width: 1024px;
+    margin:0 auto;
+}
