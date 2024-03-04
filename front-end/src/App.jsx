@@ -1,11 +1,12 @@
 import React from 'react'
-import {Header,Mentor} from "./components"
+import {Header,Info,NavBar} from "./components"
 
 const App = () => {
   return (
     <>
     <Header></Header>
-    <Mentor></Mentor>
+    <Info></Info>
+    <NavBar></NavBar>
     </>
   )
 }
