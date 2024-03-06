@@ -26,12 +26,12 @@ header .cta{
 }
 
 header .cta .Quote{
-    font-weight: 600;
-    font-size: 12px;
-    color: var(--SomeBlue);
+    font-weight: 800;
+    font-size: 13px;
+    color:var(--darkblue-color);
     position: relative;
 }
-
+/*Line after Quote*/
 header .cta .Quote::after{
     content: "";
     position: absolute;

@@ -7,7 +7,7 @@ nav {
     border-radius: 0px 0px 10px 10px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items:center;
     z-index: 300;
     padding: 14px 32px;
 }
@@ -17,11 +17,25 @@ nav ul{
     list-style: none;
     padding: 0;
     gap: 30px;
+    align-self:center;
 }
 
 nav ul li a{
     color: var(--SomeBlue);
     font-weight: 800;
     font-size: 16px;
+}
+a.logo{
+    display: flex;
+    color: var(--YellowOrch-color);
+    font-weight: 800;
+    font-size: 16px;
+}
+a.logo .yellow{
+    color:var(--SomeBlue);
+}
 
+a.logo .LogoName{
+    display: flex;
+    align-self:center;
 }
