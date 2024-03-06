@@ -2,7 +2,12 @@
     --darkblue-color: #03517F;
     --YellowOrch-color: #F9BD21;
     --Grey-color: #B4B5B6;
+    --DarkColor: #181E1E;
     --SomeBlue: #065481;
+    --Peach:#FF6864;
+    --Redd:#E63946;
+    --SomeWhite: #FFFAFA;
+
 }
 *,
 *::after,
@@ -11,9 +16,12 @@
 }
 body{
     margin:0;
-    font-family: "Inter",Arial, Helvetica, sans-serif;
+    font-family: "Inter", sans-serif;
 }
 .wrapper{
     max-width: 1024px;
     margin:0 auto;
+}
+a{
+    text-decoration: none;
 }

@@ -1,9 +1,9 @@
 import React from 'react'
-import Mentor from "./Mentor.css"
+import "./Mentor.css"
 
 const Mentor = () => {
   return (
-    <div>Mentor</div>
+    <section>Mentor</section>
   )
 }
 

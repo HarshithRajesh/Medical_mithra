@@ -1,0 +1,27 @@
+nav {
+    position: fixed;
+    width:1024px;
+    top:24px;
+    background: rgba(255, 254, 248, 0.5);
+    backdrop-filter: blur(20px);
+    border-radius: 0px 0px 10px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 300;
+    padding: 14px 32px;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    padding: 0;
+    gap: 30px;
+}
+
+nav ul li a{
+    color: var(--SomeBlue);
+    font-weight: 800;
+    font-size: 16px;
+
+}
