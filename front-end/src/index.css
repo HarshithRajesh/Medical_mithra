@@ -45,9 +45,11 @@ section h2{
 }
 
 .White{
-    background-color: #fff;
+    background: #fff;
 }
-
+.black{
+    background: #000;
+}
 section .content-container{
     display: flex;
     max-width: 250rem;

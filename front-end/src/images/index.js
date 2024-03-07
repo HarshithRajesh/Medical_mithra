@@ -18,6 +18,6 @@ import vision from "./vision.png"
 import mission from "./mission.png"
 import Values from "./Values.png"
 import Doctor from "./Doctor.png"
-import TextBG from "./TextBG.jpg"
+import TextBG from "./TextBG.png"
 import Picture1 from "./Picture1.png"
 export {Dr1,Dr2,Dr3,Dr4,Chat,Close,corner,Home,Insta,Linkdin,Login,Logo,Mail,MedicalMitraLogo,WhatsappLogo,logo,vision,mission,Values,Doctor,TextBG,Picture1}

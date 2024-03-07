@@ -1,7 +1,7 @@
 header{
     min-height: 100vh;
     width:100%;
-    background: url('../../images/Dr.jpg');
+    background: url('../../images/DoctorBG.png');
     background-size: cover;
     background-position: center;
 }
@@ -47,7 +47,10 @@ header .cta h1{
     font-weight: 700;
     font-size:35px;
     line-height: 140%;
-    color: #FFFFFF;
+    color: #fff;
+    -webkit-text-stroke: 1.5px hsl(0, 0%, 0%,0.1);
+    text-shadow: 5px 10px 20px 5px rgba(0, 0, 0, 0.6);
+     ;
 }
 
 header .cta .Contact-btn{
@@ -57,4 +60,8 @@ header .cta .Contact-btn{
     padding: 10px 32px;
     font-weight: 800;
     font-weight: 16px;
+}
+
+header .cta .Contact-btn:hover{
+    box-shadow: 5px 10px 20px 1px rgba(0, 0, 0, 0.6)!important;
 }

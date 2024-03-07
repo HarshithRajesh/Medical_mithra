@@ -1,0 +1,14 @@
+a.logo{
+    display: flex;
+    color: var(--YellowOrch-color);
+    font-weight: 800;
+    font-size: 16px;
+}
+a.logo .yellow{
+    color:var(--SomeBlue);
+}
+
+a.logo .LogoName{
+    display: flex;
+    align-self:center;
+}
