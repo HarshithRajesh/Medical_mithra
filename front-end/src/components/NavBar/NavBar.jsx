@@ -1,35 +1,20 @@
 import React from 'react'
 import "./NavBar.css"
 import {logo} from "../../images"
+import { Link } from "react-router-dom";
+import { NavLink } from 'react-router-dom';
 
 const NavBar = () => {
   return <nav>
-    <a href="#" className="logo">
+    <Link to="/" className="logo">
       <img src={logo} height={50} width={50} /><br></br>
       <span className="LogoName">
       Medical<span className="yellow">Mitra</span></span>
-    </a>
-    <ul>
-      <li>
-        <a href="#">
-          About
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          Webinar
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          Contact
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          SignUp
-        </a>
-      </li>
+      </Link>
+    <ul><li><NavLink to="/About">About</NavLink></li>
+      <li><NavLink to="webinar">Webinar</NavLink></li>
+      <li><NavLink to="Contact">Contact</NavLink></li>
+      <li><NavLink to="SignUp">SignUp</NavLink></li>
     </ul>
   </nav>
 }

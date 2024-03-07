@@ -1,6 +1,8 @@
 import React from 'react'
 import "./Header.css"
 import NavBar from '../NavBar/NavBar'
+import { Link } from "react-router-dom";
+
 const Header = () => {
   return (
     <header>
@@ -13,9 +15,9 @@ const Header = () => {
          <h1>
           We equip you with the resources and skills needed to thrive.
           </h1>
-         <a href="#" className="Contact-btn">
+         <Link to="Contact" className="Contact-btn">
           Contact Us
-         </a>
+         </Link>
          </div>
       </div>
     </header>

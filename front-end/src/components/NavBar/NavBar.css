@@ -1,3 +1,13 @@
+.active{
+    background-color: hsl(43, 95%, 55%,0.8);
+    border-radius: 10px;
+    background-size: contain;
+}
+nav ul li a:not(.active):hover{
+    background-color: hsl(43, 95%, 55%,0.3);
+    border-radius: 10px;
+}
+
 nav {
     position: fixed;
     width:1024px;
@@ -22,6 +32,7 @@ nav ul{
 
 nav ul li a{
     color: var(--SomeBlue);
+    text-decoration: none;
     font-weight: 800;
     font-size: 16px;
 }

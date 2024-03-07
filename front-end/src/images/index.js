@@ -14,7 +14,7 @@ import Mail from "./Mail.svg"
 import MedicalMitraLogo from "./MedicalMitraLogo.svg"
 import WhatsappLogo from "./WhatsappLogo.svg"
 import logo from "./Logo.png"
-import Support from "./Support.jpg"
+import vision from "./vision.png"
+import mission from "./mission.png"
 import Values from "./Values.png"
-import Contribution from "./Contribution.png"
-export {Dr1,Dr2,Dr3,Dr4,Chat,Close,corner,Home,Insta,Linkdin,Login,Logo,Mail,MedicalMitraLogo,WhatsappLogo,logo,Support,Values,Contribution}
+export {Dr1,Dr2,Dr3,Dr4,Chat,Close,corner,Home,Insta,Linkdin,Login,Logo,Mail,MedicalMitraLogo,WhatsappLogo,logo,vision,mission,Values}
