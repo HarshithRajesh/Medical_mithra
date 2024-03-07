@@ -1,0 +1,43 @@
+#info .Wrapper {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 0, 20px;
+}
+.info .Wrapper{
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 0, 20px;
+}
+#info .info-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 0.5px;
+}
+
+#info .Wrapper .content-container .info-content .info-content-details {
+    display: block;
+    align-items: center;
+    text-align: center;
+    justify-items: center;
+}
+
+#info .info-content .Amount {
+    font-family: "Poppins", serif;
+}
+
+#info .bold {
+    font-weight: bold;
+}
+
+#info .Wrapper {
+    position: relative;
+}
+
+#info .Corner-image {
+    position: absolute;
+    left: -100;
+    top: 0;
+    margin: 0;
+}

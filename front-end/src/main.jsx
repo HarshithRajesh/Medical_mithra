@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
-import About from "./About/About.jsx"
+import About from "../src/Pages/About/About.jsx"
 
 import {
   createBrowserRouter,

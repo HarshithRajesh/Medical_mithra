@@ -11,8 +11,8 @@ const AboutDetail = () => {
         <h2 className="about-title">Why Choose Career Shapers?</h2>
         <p className="about-text">Unsure about your future in medicine or engineering? Career Shapers empowers you to make informed decisions with personalized counseling based on your marks and ranking. Our expert guidance helps you navigate the complex process of entrance exams and career choices, all in one place. Stop the doubts and shape your future with Career Shapers.</p>
       </div>
-      <div>
-        <br/><br/>
+      <div className="wrapper">
+        <br/><br/><br/>
       <Card/>
       <br/><br/><br/>
         <div>
@@ -25,6 +25,7 @@ const AboutDetail = () => {
           <p className="about-text">Career Shapers empowers students like you to navigate the complexities of higher education. Our dedicated team of young professionals serves as your trusted advisor, guiding you through every step of your journey, from choosing the right career path and institution to navigating admissions and settling into your new environment. We cater specifically to students pursuing engineering and medical fields, offering innovative resources and expert guidance on specializations, entrance exams, and admission procedures across India and internationally.</p>
         </div>
       </div>
+      <br/><br/><br/>
       </div>
       </>
   )

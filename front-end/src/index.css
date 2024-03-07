@@ -22,7 +22,36 @@ body{
     max-width: 1024px;
     margin:0 auto;
 }
+
+.Sizing{
+    max-width: 80%;
+    margin:0 auto;
+}
 a{
     text-decoration: none;
 }
 
+/*Sections*/
+
+section{
+    padding: 10px 10px;
+    color:#000;
+}
+
+section h2{
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 4px
+}
+
+.White{
+    background-color: #fff;
+}
+
+section .content-container{
+    display: flex;
+    max-width: 250rem;
+    margin:0 auto;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,6 +1,6 @@
-import Header from  "./Header/Header"
-import Info from "./Info/Info"
-import Footer from "./Footer/Footer"
+import Header from  "../Pages/Header/Header"
+import Info from "../Pages/Info/Info"
+import Footer from "../Pages/Footer/Footer"
 import Mentor from "./Mentor/Mentor"
 
 export {Header,Info,Footer,Mentor}
