@@ -57,3 +57,19 @@ section .content-container{
     align-items: center;
     justify-content: center;
 }
+/*Tablet Version*/
+@media(max-width:1040px){
+    .wrapper{
+        max-width: 694px;
+    }
+}
+/*Smartphone Version*/
+@media(max-width:720px){
+    .wrapper{
+        padding: 0,32px;
+    }
+
+    section h2{
+        font-size: 24px;
+    }
+} 

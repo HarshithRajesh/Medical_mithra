@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
-import About from "../src/Pages/About/About.jsx"
+import {About,Contact,Webinar,UGNEET,PGNEET} from './Pages'
 
 import {
   createBrowserRouter,
@@ -17,6 +17,22 @@ const router = createBrowserRouter([
   {
     path: "About",
     element: <About/>,
+  },
+  {
+    path: "Contact",
+    element: <Contact/>,
+  },
+  {
+    path: "Webinar",
+    element: <Webinar/>,
+  },
+  {
+    path: "UGNEET",
+    element: <UGNEET/>,
+  },
+  {
+    path: "PGNEET",
+    element: <PGNEET/>,
   },
 ]);
 

@@ -12,9 +12,9 @@ const NavBar = () => {
       Medical<span className="yellow">Mitra</span></span>
       </Link>
     <ul><li><NavLink to="/About">About</NavLink></li>
-      <li><NavLink to="webinar">Webinar</NavLink></li>
-      <li><NavLink to="Contact">Contact</NavLink></li>
-      <li><NavLink to="SignUp">SignUp</NavLink></li>
+      <li><NavLink to="/Webinar">Webinar</NavLink></li>
+      <li><NavLink to="/Contact">Contact</NavLink></li>
+      <li><NavLink to="/SignUp">SignUp</NavLink></li>
     </ul>
   </nav>
 }

@@ -3,28 +3,50 @@
     margin: 0 auto;
     padding: 0, 20px;
 }
-.info .Wrapper{
-    max-width: 90%;
-    margin: 0 auto;
-    padding: 0, 20px;
+
+#info .info-content1{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    width: 10%;
+    gap: 0.5px;
 }
 #info .info-content {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: left;
     width: 100%;
     gap: 0.5px;
+    margin:20px;
 }
 
 #info .Wrapper .content-container .info-content .info-content-details {
+    display: block;
+    align-items: center;
+    text-align: left;
+    justify-items: center;
+}
+#info .Wrapper .content-container .info-content .info-content-details1 {
     display: block;
     align-items: center;
     text-align: center;
     justify-items: center;
 }
 
-#info .info-content .Amount {
+#info .info-content .Amount,.Amount1 {
     font-family: "Poppins", serif;
+}
+
+#info .info-content .Text::before{
+    content: "";
+    position: absolute;
+    width:500px;
+    height:4px;
+    background-color: var(--YellowOrch-color);
+    left: 100;
+    margin:0;
+    bottom: 52%;
 }
 
 #info .bold {
@@ -48,12 +70,44 @@
 
 #info .info-content .Contact-btn{
     border-radius: 10px;
-    background: var(--YellowOrch-color) ;
+    background: var(--YellowOrch-color);
+    width: 145px;
     color: var(--darkblue-color);
     padding: 10px 32px;
     font-weight: 800;
     font-weight: 16px;
+    position: relative;
 }
 #info .info-content .Contact-btn:hover{
     box-shadow: 5px 10px 20px 1px rgba(0, 0, 0, 0.1)!important;
+}
+
+/*Tablet Version*/
+@media(max-width:1080px){
+    #info .chat-image {
+        margin: 0 auto;
+        width:385px;
+    }
+    #info .info-content .Text::before{
+        content: "";
+        position: absolute;
+        width:300px;
+        height:4px;
+        background-color: var(--YellowOrch-color);
+        left: 100;
+        margin:0;
+        bottom: 46%;
+    }
+    #info .Wrapper {
+        max-width: 60%;
+        margin: 0 auto;
+        padding: 20;
+    }
+    #info .Wrapper .content-container .info-content .info-content-details1 {
+        display: block;
+        align-items: center;
+        text-align: center;
+        justify-items: center;
+        width: 200px;
+    }
 }
