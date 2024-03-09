@@ -43,8 +43,7 @@ def register():
             email=request.args.get('email'),
             name=request.args.get('name'),
             password=request.args.get('password'),
-            phoneNumber =request.args.get('phoneNumber'),
-            score = 0,)
+            phoneNumber =request.args.get('phoneNumber'))
         new_user.password = generate_password_hash(new_user.password, method='pbkdf2:sha256', salt_length=8)
         db.session.add(new_user)
         db.session.commit()
@@ -79,10 +78,10 @@ def login():
                 "email":user.email
                    
             }
-            custom_token = auth.create_custom_token(uid,additionals_claims).decode()
+            # custom_token = auth.create_custom_token(uid,additionals_claims).decode()
             # custom_token = get_id_token(uid,additionals_claims)
             # custom_token = custom_token.replace('"', "'")
-            response =  {"status":1,"score":user.score,"id":user.id,"name":user.name,"email":user.email,"phone_Number":user.phoneNumber,"authToken":custom_token}
+            response =  {"status":1,"score":user.score,"id":user.id,"name":user.name,"email":user.email,"phone_Number":user.phoneNumber}
             return jsonify(response)
 
 
