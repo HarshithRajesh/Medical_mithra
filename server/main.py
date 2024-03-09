@@ -4,9 +4,19 @@ from wtforms import StringField,SubmitField,validators
 from wtforms.validators import DataRequired
 import psycopg2
 from werkzeug.security import generate_password_hash, check_password_hash
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'Medical'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:5AbzfqI1Sy3L8nFF0e3t@containers-us-west-53.railway.app:6771/railway'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+db = SQLAlchemy(app)
+class User( db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    email = db.Column(db.String(100), unique=True)
+    password = db.Column(db.String(100))
+    name = db.Column(db.String(1000))
+    phoneNumber = db.Column(db.String(10))
 
 class MyForm(FlaskForm):
     name = StringField('Name', validators=[validators.DataRequired()])
@@ -14,13 +24,7 @@ class MyForm(FlaskForm):
     message = StringField('Message', validators=[validators.DataRequired()])
     submit = SubmitField('Submit')
 
-class User( db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    email = db.Column(db.String(100), unique=True)
-    password = db.Column(db.String(100))
-    name = db.Column(db.String(1000))
-    phoneNumber = db.Column(db.String(10))
-    score = db.Column(db.Integer)
+
 
 @app.route('/')
 def home():
