@@ -5,7 +5,7 @@ import Grid from '@mui/material/Grid';
 import { Contacting, Logo } from "../../images"
 import Paper from '@mui/material/Paper';
 import ContactForm from '../../components/ContactForm/ContactForm';
-
+import Footer from '../Footer/Footer'
 
 const Contact = () => {
   useEffect(() => {
@@ -13,8 +13,12 @@ const Contact = () => {
   }, [])
 
 
-  return <div className="Spacing">
-
+  return <>
+  <div className="Spacing">
+    <div className="wrapper"></div>
+    <div className="content2">
+      <img src={Logo} alt="Logo" width={100} />
+    </div>
     <h2>Feel Free to Contact Us </h2>
     <div className="wrapper">
       <NavBar /></div>
@@ -38,14 +42,18 @@ const Contact = () => {
     </Grid>
     <br />
     <ContactForm />
-    
       <h2>We're here for you, Please drop us a message and our team will get in touch with you within 24 hours.</h2>
+
+
       <br /><br /><br />
     <div className="content">
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7773.72543395877!2d77.54381228917927!3d13.04440917005253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3dab52b44921%3A0xb20207a4d88820b!2sHappy%20Finserve!5e0!3m2!1sen!2sin!4v1709903488274!5m2!1sen!2sin" width="600" height="450" style={{ border: 10 }} allowFullScreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
       </iframe>
       <br /></div>
+
   </div>
+  <Footer/></>
+  
 }
 
 export default Contact

@@ -6,6 +6,11 @@
     text-align: center;
     color:var(--SomeBlue)
 }
+
+.Spacing .content2 {
+    text-align: center;
+    align-content: center;
+}
 .Spacing .content1 {
     text-align: left;
     display: flex;
