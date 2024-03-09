@@ -1,9 +1,14 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import {Header,Info,Footer} from './components'
 import { WhatsappLogo } from './images'
 
+
 const App = () => {
+  useEffect(()=>{
+    window.scroll(0,0);
+  },[])
   return <>
+ 
   <Header />
   <Info />
   <Footer />

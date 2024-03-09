@@ -3,6 +3,7 @@
     border-radius: 10px;
     background-size: contain;
 }
+
 nav ul li a:not(.active):hover{
     background-color: hsl(43, 95%, 55%,0.3);
     border-radius: 10px;
@@ -11,7 +12,7 @@ nav ul li a:not(.active):hover{
 nav {
     position: fixed;
     width:1024px;
-    top:24px;
+    top:0;
     background: rgba(255, 254, 248, 0.5);
     backdrop-filter: blur(20px);
     border-radius: 0px 0px 10px 10px;
@@ -27,7 +28,7 @@ nav ul{
     list-style: none;
     padding: 0;
     gap: 30px;
-    align-self:center;
+    text-align: center;
 }
 
 nav ul li a{

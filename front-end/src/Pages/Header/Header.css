@@ -41,7 +41,9 @@ header .cta .Quote::after{
     left: 0;
     bottom: -10px;
 }
-
+header .wrapper .NavSpacing{
+    top: 24px;
+}
 header .cta h1{
     font-family: "Alegreya";
     font-weight: 700;

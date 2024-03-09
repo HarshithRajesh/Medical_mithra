@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import "./UGNEET.css"
 import NavBar from '../../components/NavBar/NavBar'
 import { Logo, TextBG, Chat,degree,medicalschool,worldwide,counseling, deadline, contract,lecture, contactlist, tracking } from "../../images"
@@ -8,6 +8,9 @@ import Paper from '@mui/material/Paper';
 
 
 const UGNEET = () => {
+  useEffect(()=>{
+    window.scroll(0,0);
+  },[])
   return (
     <>
       <div className="wrapper"><NavBar />

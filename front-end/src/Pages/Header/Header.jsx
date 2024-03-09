@@ -6,8 +6,10 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <header>
-      <div className="wrapper">
-        <NavBar />
+      <div className="wrapper"><div className="NavSpacing">
+      <NavBar />
+      </div>
+        
         <div className="cta">
         <p className="Quote">
           Leading the way in shaping tomorrow's doctors and engineers.

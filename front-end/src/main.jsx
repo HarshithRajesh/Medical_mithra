@@ -6,7 +6,7 @@ import {About,Contact,Webinar,UGNEET,PGNEET} from './Pages'
 
 import {
   createBrowserRouter,
-  RouterProvider,
+  RouterProvider
 } from "react-router-dom";
 
 const router = createBrowserRouter([

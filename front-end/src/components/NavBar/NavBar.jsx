@@ -2,7 +2,7 @@ import React from 'react'
 import "./NavBar.css"
 import {logo} from "../../images"
 import { Link } from "react-router-dom";
-import { NavLink } from 'react-router-dom';
+import { NavLink,ScrollRestoration  } from 'react-router-dom';
 
 const NavBar = () => {
   return <nav>
@@ -11,10 +11,10 @@ const NavBar = () => {
       <span className="LogoName">
       Medical<span className="yellow">Mitra</span></span>
       </Link>
-    <ul><li><NavLink to="/About">About</NavLink></li>
-      <li><NavLink to="/Webinar">Webinar</NavLink></li>
-      <li><NavLink to="/Contact">Contact</NavLink></li>
-      <li><NavLink to="/SignUp">SignUp</NavLink></li>
+    <ul><li><NavLink to="/About" preventScrollReset={true}>About</NavLink></li>
+      <li><NavLink to="/Webinar"preventScrollReset={true}>Webinar</NavLink></li>
+      <li><NavLink to="/Contact"preventScrollReset={true}>Contact</NavLink></li>
+      <li><NavLink to="/SignUp"preventScrollReset={true}>SignUp</NavLink></li>
     </ul>
   </nav>
 }

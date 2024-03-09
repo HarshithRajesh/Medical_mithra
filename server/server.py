@@ -2,7 +2,7 @@ from flask import Flask, jsonify
 
 app = Flask(__name__)
 
-@app.route('/api')
+@app.route('/<>')
 def api():
     response = {'message': 'Hello, World!'}
     return jsonify(response)
@@ -13,4 +13,4 @@ def gg():
     return jsonify(response)
 
 if __name__ == '__main__':
-  app.run()
+  app.run(host='0.0.0.0',debug=True)

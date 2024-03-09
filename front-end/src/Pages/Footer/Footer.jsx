@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { logo, Insta, Youtube, Linkdin, Facebook } from "../../images"
 
 const Footer = () => {
+  
   return (
     <footer className="black">
       <div className="wrapper">
