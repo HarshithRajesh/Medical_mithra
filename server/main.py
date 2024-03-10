@@ -1,3 +1,4 @@
+import os
 from flask import Flask,render_template,redirect,request,jsonify
 from flask_wtf import FlaskForm
 from wtforms import StringField,SubmitField,validators
@@ -6,11 +7,19 @@ import psycopg2
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_sqlalchemy import SQLAlchemy
 
+
+load_dotenv()
+
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'Medical'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:5AbzfqI1Sy3L8nFF0e3t@containers-us-west-53.railway.app:6771/railway'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-db = SQLAlchemy(app)
+# app.config['SECRET_KEY'] = 'Medical'
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:5AbzfqI1Sy3L8nFF0e3t@containers-us-west-53.railway.app:6771/railway'
+# app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+# db = SQLAlchemy(app)
+
+url = os.getenv("DATABASE_URL")
+connection = psycopg2.connect(url)
+
+
 class User( db.Model):
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(100), unique=True)
