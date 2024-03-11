@@ -1,31 +1,24 @@
-import os
 from flask import Flask,render_template,redirect,request,jsonify
 from flask_wtf import FlaskForm
 from wtforms import StringField,SubmitField,validators
 from wtforms.validators import DataRequired
 import psycopg2
 from werkzeug.security import generate_password_hash, check_password_hash
-from flask_sqlalchemy import SQLAlchemy
+
+import os
+import psycopg2
+
+conn = psycopg2.connect(
+        host='localhost',
+    port=5432,
+    database="medical_mitra",
+    user="postgres",
+    password="cks004"
+)
 
 
-load_dotenv()
-
-app = Flask(__name__)
-# app.config['SECRET_KEY'] = 'Medical'
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:5AbzfqI1Sy3L8nFF0e3t@containers-us-west-53.railway.app:6771/railway'
-# app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-# db = SQLAlchemy(app)
-
-url = os.getenv("DATABASE_URL")
-connection = psycopg2.connect(url)
-
-
-class User( db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    email = db.Column(db.String(100), unique=True)
-    password = db.Column(db.String(100))
-    name = db.Column(db.String(1000))
-    phoneNumber = db.Column(db.String(10))
+app = Flask(_name_)
+app.config['SECRET_KEY'] = 'Medical'
 
 class MyForm(FlaskForm):
     name = StringField('Name', validators=[validators.DataRequired()])
@@ -45,19 +38,32 @@ def home():
 def register():
 
     if request.method == "POST":
-        if User.query.filter_by(email = request.args.get('email')).first():
+       
+        cursor = conn.cursor()
+        email = request.args.get('email')
+        name=request.args.get('name')
+        password=request.args.get('password')
+        password = generate_password_hash(password, method='pbkdf2:sha256', salt_length=8)
+        phonenumber =request.args.get('phoneNumber')
+        query = f"SELECT * FROM users WHERE email='{email}';"
+        cursor.execute(query)
 
-            return {"status":0,"message":"account already exists"}
-        new_user = User(
-            email=request.args.get('email'),
-            name=request.args.get('name'),
-            password=request.args.get('password'),
-            phoneNumber =request.args.get('phoneNumber'))
-        new_user.password = generate_password_hash(new_user.password, method='pbkdf2:sha256', salt_length=8)
-        db.session.add(new_user)
-        db.session.commit()
+        if cursor.rowcount > 0:
+            return {"status": 0, "message": "account already exists"}
+        else :
+            email=request.args.get('email')
+            
+            
 
-    return {"status":1}
+            cur = conn.cursor()
+
+            sql = '''INSERT INTO Users
+                    (name,email,passwords,phone_number)
+                    VALUES (%s,%s,%s,%s);'''
+            cur.execute(sql,(name,email,password,phonenumber))
+            conn.commit()
+            cur.close()
+            return {"status":1}
 
 
 @app.route('/login', methods=['POST'])
@@ -66,46 +72,43 @@ def login():
     if request.method == 'POST':
         email = request.args.get('email')
         password = request.args.get('password')
+        cursor = conn.cursor()
+        query = f"SELECT * FROM users WHERE email='{email}';"
+        cursor.execute(query)
 
-        user = User.query.filter_by(email=email).first()
+        user = cursor.fetchone()
 
+        querypass = f"SELECT * FROM users WHERE passwords='{password}';"
+        cursor.execute(querypass)
+
+        userpass = cursor.fetchone()
         if not user:
 
             return {"status":0,"message":"User not found,Please register"}
+        
+        elif password!=userpass:
 
-        elif not check_password_hash(user.password,password):
+            return {"status":0,"message":"Password is not matching",}
 
-            return {"status":0,"message":"Password is not matching"}
+        # elif not check_password_hash(userpass,password):
+
+        #     return {"status":0,"message":"Password is not matching"}
 
         else:
-            # login_user(user)
-            # id = str(id)
-            uid = str(user.id)
-            additionals_claims = {
-                "name": user.name,
-                "phoneNumber" :user.phoneNumber,
-                "email":user.email
+            # # login_user(user)
+            # # id = str(id)
+            # uid = str(user.id)
+            # additionals_claims = {
+            #     "name": user.name,
+            #     "phoneNumber" :user.phoneNumber,
+            #     "email":user.email
                    
-            }
-            # custom_token = auth.create_custom_token(uid,additionals_claims).decode()
-            # custom_token = get_id_token(uid,additionals_claims)
-            # custom_token = custom_token.replace('"', "'")
-            response =  {"status":1,"score":user.score,"id":user.id,"name":user.name,"email":user.email,"phone_Number":user.phoneNumber}
+            # }
+            
+            response =  {"status":1,"email":email}
             return jsonify(response)
 
 
 
-@app.route('/sample', methods=['GET', 'POST'])
-def new():
-    form = MyForm()
-    if form.validate_on_submit():
-        name = form.name.data
-        email = form.email.data
-        message = form.message.data
-        # Process data here (e.g., save to database, send email)
-
-        return jsonify({'success': True, 'name': name})
-    return render_template('index.html', form=form)
-
-if __name__ == '__main__':
+if _name_ == '_main_':
   app.run(host='0.0.0.0',debug=True)
